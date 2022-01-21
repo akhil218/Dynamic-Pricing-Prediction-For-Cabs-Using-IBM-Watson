@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>Prediction Page</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="static/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href="static/form-validation.css" rel="stylesheet">
+  </head>
+
+  <body class="bg-light">
+   <header>
+
+      <div class="navbar navbar-dark bg-dark box-shadow">
+        <div class="container d-flex justify-content-between">
+          <a href="#" class="navbar-brand d-flex align-items-center">
+
+			<strong>Team Alpha</strong>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="py-5 text-center">
+          <h2>Dynamic Pricing Prediction for Cabs</h2>
+        </div>
+
+      <div class="row">
+
+        <div class="col-md-8 order-md-1">
+
+          <form action="/predict" method="POST" class="needs-validation" novalidate>
+
+
+
+            <div class="row">
+              <div class="col-md-5 mb-3">
+                <label for="cab_type">Cab Name</label>
+                <select class="custom-select d-block w-100" id="cab_type" name="cab_type" required>
+
+				<option>Select the Cab Name</option>
+				<option value="0">Lyft</option>
+				<option value="1">Uber</option>
+
+                </select>
+               </div>
+              <div class="col-md-4 mb-3">
+                 <label for="name">Cab Type</label>
+                <select class="custom-select d-block w-100" id="name" name="name" required>
+
+					<option value="">Select the Cab Type</option>
+					<option value="11">Uber WAV</option>
+					<option value="1">Uber Black SUV</option>
+					<option value="10">Uber XL</option>
+					<option value="0">Uber Black</option>
+					<option value="9">Uber X</option>
+					<option value="8">Uber Pool</option>
+					<option value="5">Lyft Normal</option>
+					<option value="6">Lyft XL</option>
+					<option value="2">Lyft Lux</option>
+					<option value="3">Lyft Lux Black</option>
+					<option value="4">Lyft Black XL</option>
+					<option value="7">Lyft Shared</option>
+                </select>
+
+              </div>
+			   <div class="col-md-3 mb-3">
+                 <label for="product_id">Cab Service Type</label>
+                <select class="custom-select d-block w-100" id="product_id" name="product_id" required>
+
+
+					<option value="">Select the Cab Service Type</option>
+					<option value="2">Uber WAV</option>
+					<option value="5">Uber Black SUV</option>
+					<option value="3">Uber XL</option>
+					<option value="1">Uber Black</option>
+					<option value="0">Uber X</option>
+					<option value="4">Uber Pool</option>
+					<option value="6">Lyft Normal</option>
+					<option value="9">Lyft Lux Suv</option>
+					<option value="8">Lyft Lux</option>
+					<option value="11">Lyft Lux Premier</option>
+					<option value="10">Lyft Plus</option>
+					<option value="7">Lyft Line Shared</option>
+
+                </select>
+
+              </div>
+
+            </div>
+
+
+
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="source">Source</label>
+				<select class="custom-select d-block w-100" id="source" name="source" required>
+					<option value="">Select the Source Location</option>
+					<option value="4">Financial District</option>
+					<option value="0">Back Bay</option>
+					<option value="10">Theatre District</option>
+					<option value="2">Boston University</option>
+					<option value="6">North End</option>
+					<option value="3">Fenway</option>
+					<option value="8">Northeastern University</option>
+					<option value="9">South Station</option>
+					<option value="5">Haymarket Square</option>
+					<option value="11">West End</option>
+					<option value="1">Beacon Hill</option>
+					<option value="7">North Station</option>
+
+                </select>
+
+              </div>
+
+            </div>
+
+			<div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="destination">Destination</label>
+				<select class="custom-select d-block w-100" id="destination" name="destination" required>
+					<option value="">Select the Destination Location</option>
+					<option value="4">Financial District</option>
+					<option value="0">Back Bay</option>
+					<option value="10">Theatre District</option>
+					<option value="2">Boston University</option>
+					<option value="6">North End</option>
+					<option value="3">Fenway</option>
+					<option value="8">Northeastern University</option>
+					<option value="9">South Station</option>
+					<option value="5">Haymarket Square</option>
+					<option value="11">West End</option>
+					<option value="1">Beacon Hill</option>
+					<option value="7">North Station</option>
+
+                </select>
+              </div>
+
+            </div>
+
+            <hr class="mb-4">
+
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Predict</button>
+          </form>
+        </div>
+      </div>
+
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-5">Dynamic Pricing Prediction for Cabs; Team Alpha</p>
+
+      </footer>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+     <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="static/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="static/js/vendor/popper.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/vendor/holder.min.js"></script>
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict';
+
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+    </script>
+
+  </body>
+</html>
